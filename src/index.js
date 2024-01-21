@@ -10,13 +10,13 @@ const MINUS = "minus";
 num.innerText = 0;
 
 const countReducer = (count = 0,action) => {
-  console.log(count,action)
-  if(action.type==="plus"){
-    return count + 1;
-  }else if(action.type==="minus"){
-    return count - 1;
-  }else{
-    return count;
+  switch(action.type) {
+    case PLUS:
+      return count + 1;
+    case MINUS:
+      return count - 1;
+    default:
+      return count;
   }
 };
 
